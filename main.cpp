@@ -1,12 +1,12 @@
 #include <stdio.h>
 int main() {
-    char pregunta[1];
+    char pregunta;
     do
     {
         printf("¿Desea continuar? (s/n): ");
-        scanf("%c", pregunta);
-    } while (pregunta[0] != 'n' && pregunta[0] != 'N');
+        scanf(" %c", &pregunta);
+    } while (pregunta != 'n' && pregunta != 'N');
         
-    
+
     return 0;
 }
