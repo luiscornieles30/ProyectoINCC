@@ -1,7 +1,7 @@
 #include <iostream>
 // Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez
 int main() {
-    char pregunta; std::string nombre; int codigo; float sueldo;
+    char pregunta; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3;
  do
     {
         std::cout << "Ingrese su nombre:";
@@ -21,7 +21,14 @@ int main() {
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
     } while (pregunta != 'n' && pregunta != 'N');
-
-
+if (sueldo <= 100000) {
+    aumento1 = sueldo * 1.30;   
+    }
+if (sueldo > 100000 && sueldo <= 200000) {
+   aumento2 = sueldo + 50000;   
+    }
+if (sueldo > 200000) {  
+    aumento3 = sueldo * 1.20;   
+    }
     return 0;
 }
