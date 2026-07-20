@@ -1,5 +1,6 @@
 #include <iostream>
 // Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez, estudiantes de ingeniería de la Universidad Fermin Toro, Nucleo Lara-Cabudare.
+//Cambio de Nombre.
 int main() {
     char pregunta; float sueldoantes; float sueldodespues;  float promedio1; float promedio2; float promedio3; float prom_aumento1; float prom_aumento2; float prom_aumento3; int empleados; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3; float m_aumento; float m_aumento2; float m_aumento3; std::string nombrem_aumento3; std::string nombrem_aumento2; std::string nombrem_aumento; float empleado1; float empleado2; float empleado3;
 m_aumento = 0;
