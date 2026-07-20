@@ -1,5 +1,5 @@
 #include <iostream>
-// Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez
+// Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez, estudiantes de ingeniería de la Universidad Fermin Toro, Nucleo Lara-Cabudare.
 int main() {
     char pregunta; float sueldoantes; float sueldodespues;  float promedio1; float promedio2; float promedio3; float prom_aumento1; float prom_aumento2; float prom_aumento3; int empleados; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3; float m_aumento; float m_aumento2; float m_aumento3; std::string nombrem_aumento3; std::string nombrem_aumento2; std::string nombrem_aumento; float empleado1; float empleado2; float empleado3;
 m_aumento = 0;
@@ -80,6 +80,6 @@ std::cout << "El empleado con mayor aumento en el rango de 100000 a 200000 es: "
 std::cout << "El empleado con mayor aumento en el rango de 200000 a mas es: " << nombrem_aumento3 << " con un aumento de: " << m_aumento3 << std::endl;
 std::cout << "El valor total de los sueldos antes del aumento es: " << sueldoantes << std::endl;
 std::cout << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
-
+// Fin del Programa, gracias por su atención a la explicación del mismo.
     return 0;
 }
