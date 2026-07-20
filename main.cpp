@@ -24,23 +24,35 @@ prom_aumento3 = 0;
 
 std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << std::endl;
  do
-    {   std::cout << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y '0' cuando le pida algún dato numerico para finalizar el programa >>>" << std::endl;
+    {   std::cout << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << std::endl;
         std::cout << "Ingrese su nombre:";
         std::cin >> nombre;
         if (nombre =="Cancelar" || nombre =="cancelar") {
-          std::cout << "El programa ha sido cancelado por el usuario" << std::endl;
+          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
           break;
         }
         std::cout << "Ingrese su codigo:";
         std::cin >> codigo;
+        if (std::cin.fail()) {
+            std::cout << "Porfavor ingresa un valor númerico" << std::endl;
+            std::cin.clear();
+            std::cin.ignore(100000000, '\n');
+            continue;
+        }
         if (codigo == 0) {
-          std::cout << "El programa ha sido cancelado por el usuario" << std::endl;
+          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
           break;
         }
         std::cout <<"Ingrese su sueldo:";
         std::cin >> sueldo;
+        if (std::cin.fail()) {
+            std::cout << "Porfavor ingresa un valor númerico" << std::endl;
+            std::cin.clear();
+            std::cin.ignore(100000000, '\n');
+            continue;
+        }
         if (sueldo ==  0) {
-          std::cout << "El programa ha sido cancelado por el usuario" << std::endl;
+          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
           break;
         }
     if (sueldo <= 100000 && sueldo > 0) {
@@ -84,16 +96,20 @@ std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
     if (pregunta != 's' && pregunta != 'S') {
-        std::cout << "Coloque un caracter valido para seguir la ejecución del programa o finalizar y recibir los datos finales" << std::endl;
+        std::cout << "<< Coloque un caracter valido para seguir la ejecución del programa o finalizar y recibir los datos finales >>" << std::endl;
         continue;
     }
     } while ((pregunta != 'n' && pregunta != 'N'));
 if (pregunta == 'n' || pregunta == 'N') {
   std::cout << "El empleado con mayor aumento en el rango de 0 a 100000 es: " << nombrem_aumento << " con un aumento de: " << m_aumento << std::endl;
+  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
   std::cout << "El empleado con mayor aumento en el rango de 100000 a 200000 es: " << nombrem_aumento2 << " con un aumento de: " << m_aumento2 << std::endl;
+  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
   std::cout << "El empleado con mayor aumento en el rango de 200000 a mas es: " << nombrem_aumento3 << " con un aumento de: " << m_aumento3 << std::endl;
   std::cout << "El valor total de los sueldos antes del aumento es: " << sueldoantes << std::endl;
+  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
   std::cout << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
+  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 }
 // Fin del Programa, gracias por su atención a la explicación del mismo.
     return 0;
