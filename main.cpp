@@ -1,5 +1,5 @@
 #include <iostream>
-// Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaezs
+// Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez
 int main() {
     char pregunta; float sueldoantes; float sueldodespues;  float promedio1; float promedio2; float promedio3; float prom_aumento1; float prom_aumento2; float prom_aumento3; int empleados; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3; float m_aumento; float m_aumento2; float m_aumento3; std::string nombrem_aumento3; std::string nombrem_aumento2; std::string nombrem_aumento; float empleado1; float empleado2; float empleado3;
 m_aumento = 0;
@@ -11,6 +11,10 @@ empleado2 = 0;
 empleado3 = 0;
 sueldoantes = 0;
 sueldodespues = 0;
+promedio1 = 0;
+promedio2 = 0;
+promedio3 = 0;
+
 
 
 
@@ -60,10 +64,22 @@ std::cout << "Programa para calcular el aumento de sueldo de los empleados" << s
         }
     empleados = empleados + 1;
     sueldoantes = sueldoantes + sueldo;
-
+    std::cout << "El Empleado " << nombre << " con codigo " << codigo << " tiene un sueldo de: " << sueldo << " y su aumento es de: " << sueldodespues << std::endl;
         std::cout << "¿Desea continuar? (s/n): ";
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
-    } while (pregunta != 'n' && pregunta != 'N');
+    } while ((pregunta != 'n' && pregunta != 'N') && (pregunta == 's' || pregunta == 'S'));
+std::cout << ">>>>>>>>>>>>>>>>>>>>Informe Final<<<<<<<<<<<<<<<<<<<<<" << std::endl;
+std::cout << "Recordar: Todos los sueldos están a base de Bolivares Venezolanos" << std::endl;
+std::cout << "El total de empleados es: " << empleados << std::endl;
+std::cout << "El salario de los empleados que ganan menos de 100000 es: " << promedio1 << std::endl;
+std::cout << "El salario de los empleados que ganan entre 100000 y 200000 es: " << promedio2 << std::endl;
+std::cout << "El salario de los empleados que ganan mas de 200000 es: " << promedio3 << std::endl;
+std::cout << "El empleado con mayor aumento en el rango de 0 a 100000 es: " << nombrem_aumento << " con un aumento de: " << m_aumento << std::endl;
+std::cout << "El empleado con mayor aumento en el rango de 100000 a 200000 es: " << nombrem_aumento2 << " con un aumento de: " << m_aumento2 << std::endl;
+std::cout << "El empleado con mayor aumento en el rango de 200000 a mas es: " << nombrem_aumento3 << " con un aumento de: " << m_aumento3 << std::endl;
+std::cout << "El valor total de los sueldos antes del aumento es: " << sueldoantes << std::endl;
+std::cout << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
+
     return 0;
 }
