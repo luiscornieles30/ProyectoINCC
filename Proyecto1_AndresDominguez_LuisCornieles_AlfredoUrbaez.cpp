@@ -33,6 +33,10 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
+        if (nombre.empty()) {
+            std::cout << "\033[32m" << "<<<< Porfavor ingresa un nombre valido o 'Cancelar' para finalizar >>>>" << "\033[0m" << std::endl;
+            continue;
+        }
         std::cout << "Ingrese su codigo:";
         std::cin >> codigo;
         if (std::cin.fail()) {
