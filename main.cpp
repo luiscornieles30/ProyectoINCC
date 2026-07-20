@@ -14,6 +14,9 @@ sueldodespues = 0;
 promedio1 = 0;
 promedio2 = 0;
 promedio3 = 0;
+prom_aumento1 = 0;
+prom_aumento2 = 0;  
+prom_aumento3 = 0;
 
 
 
