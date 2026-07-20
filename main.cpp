@@ -22,7 +22,7 @@ prom_aumento3 = 0;
 
 
 
-std::cout << "Programa para calcular el aumento de sueldo de los empleados" << std::endl;
+std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << std::endl;
  do
     {   std::cout << "Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y '0' cuando le pida algún dato numerico para finalizar el programa" << std::endl;
         std::cout << "Ingrese su nombre:";
