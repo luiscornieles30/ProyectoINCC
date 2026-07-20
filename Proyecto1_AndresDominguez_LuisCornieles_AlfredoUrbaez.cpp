@@ -35,7 +35,7 @@ std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo
         std::cout << "Ingrese su codigo:";
         std::cin >> codigo;
         if (std::cin.fail()) {
-            std::cout << "<<<< Porfavor ingresa un valor númerico >>>>" << std::endl;
+            std::cout << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar >>>>" << std::endl;
             std::cin.clear();
             std::cin.ignore(100000000, '\n');
             continue;
@@ -47,7 +47,7 @@ std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo
         std::cout <<"Ingrese su sueldo:";
         std::cin >> sueldo;
         if (std::cin.fail()) {
-            std::cout << "<<<< Porfavor ingresa un valor númerico >>>>" << std::endl;
+            std::cout << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar>>>>" << std::endl;
             std::cin.clear();
             std::cin.ignore(100000000, '\n');
             continue;
