@@ -23,37 +23,38 @@ prom_aumento3 = 0;
 
 
 
-std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << std::endl;
+std::cout << "\033[2J" << std::endl;
+std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
  do
-    {   std::cout << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << std::endl;
+    {   std::cout << "\033[36m" << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << "\033[0m" << std::endl;
         std::cout << "Ingrese su nombre:";
         std::cin >> nombre;
         if (nombre =="Cancelar" || nombre =="cancelar") {
-          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
+          std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
         std::cout << "Ingrese su codigo:";
         std::cin >> codigo;
         if (std::cin.fail()) {
-            std::cout << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar >>>>" << std::endl;
+            std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar >>>>" << "\033[0m" << std::endl;
             std::cin.clear();
             std::cin.ignore(100000000, '\n');
             continue;
         }
         if (codigo == 0) {
-          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
+          std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
         std::cout <<"Ingrese su sueldo:";
         std::cin >> sueldo;
         if (std::cin.fail()) {
-            std::cout << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar>>>>" << std::endl;
+            std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar>>>>" << "\033[0m" << std::endl;
             std::cin.clear();
             std::cin.ignore(100000000, '\n');
             continue;
         }
         if (sueldo ==  0) {
-          std::cout << "<<<< El programa ha sido cancelado por el usuario >>>>" << std::endl;
+          std::cout << "\033[31m" <<"<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
     if (sueldo <= 100000 && sueldo > 0) {
@@ -93,11 +94,11 @@ std::cout << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo
     empleados = empleados + 1;
     sueldoantes = sueldoantes + sueldo;
     std::cout << "El Empleado " << nombre << " con codigo " << codigo << " tiene un sueldo de: " << sueldo << " y su aumento es de: " << sueldodespues << std::endl;
-        std::cout << "¿Desea continuar? (s/n): ";
+        std::cout << "\033[4;32m" << "¿Desea continuar? (s/n): " << "\033[0m";
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
     if (pregunta != 's' && pregunta != 'S') {
-        std::cout << "<< Coloque un caracter valido para seguir la ejecución del programa o finalizar y recibir los datos finales >>" << std::endl;
+        std::cout << "\033[4;31m" << "<< Coloque un caracter valido para seguir la ejecución del programa o finalizar y recibir los datos finales >>" << "\033[0m" << std::endl;
         continue;
     }
     } while ((pregunta != 'n' && pregunta != 'N'));
