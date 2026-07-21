@@ -33,7 +33,7 @@ while (ct < 1) {
         std::cin.ignore(100000000, '\n');
         continue;
     }
-    if (empleadostotales < 0) {
+    if (empleadostotales <= 0) {
         std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico mayor a 0 >>>>" << "\033[0m" << std::endl;
         std::cin.clear();
         std::cin.ignore(100000000, '\n');
@@ -136,11 +136,15 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
         std::cout << "\033[4;32m" << "¿Desea continuar? (s/n): " << "\033[0m";
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
-    if (pregunta != 's' && pregunta != 'S') {
+    while (pregunta != 's' && pregunta != 'S') {
         if (pregunta != 'n' && pregunta != 'N') {
          std::cout << "\033[4;31m" << "<< Coloque un caracter valido acorde a las indicaciones la proxima vez >>" << "\033[0m" << std::endl;
          std::cout << "\033[4;32m" << "¿Desea continuar? (s/n): " << "\033[0m";
          std::cin >> pregunta;
+         std::cin.ignore(100000000, '\n');
+        }
+        else {
+            break;
         }
     }
     } while ((pregunta != 'n' && pregunta != 'N'));
