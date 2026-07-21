@@ -23,11 +23,11 @@ prom_aumento3 = 0;
 
 
 
-std::cout << "\033[2J\033[H" << std::endl;
+
 std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
  do
     {   std::cout << "\033[36m" << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << "\033[0m" << std::endl;
-        std::cout << "Ingrese su nombre:";
+        std::cout << "\033[90m" << "Ingrese su nombre:";
         std::cin >> nombre;
         if (nombre =="Cancelar" || nombre =="cancelar") {
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
@@ -107,16 +107,16 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
     }
     } while ((pregunta != 'n' && pregunta != 'N'));
 if (pregunta == 'n' || pregunta == 'N') {
-  std::cout << "El empleado con mayor aumento en el rango de 0 a 100000 es: " << nombrem_aumento << " con un aumento de: " << m_aumento << std::endl;
-  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-  std::cout << "El empleado con mayor aumento en el rango de 100000 a 200000 es: " << nombrem_aumento2 << " con un aumento de: " << m_aumento2 << std::endl;
-  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-  std::cout << "El empleado con mayor aumento en el rango de 200000 a mas es: " << nombrem_aumento3 << " con un aumento de: " << m_aumento3 << std::endl;
-  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-  std::cout << "El valor total de los sueldos antes del aumento es: " << sueldoantes << std::endl;
-  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-  std::cout << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
-  std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+  std::cout << "\033[92m" << "El empleado con mayor aumento en el rango de 0 a 100000 es: " << nombrem_aumento << " con un aumento de: " << m_aumento << std::endl;
+  std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
+  std::cout << "\033[92m" << "El empleado con mayor aumento en el rango de 100000 a 200000 es: " << nombrem_aumento2 << " con un aumento de: " << m_aumento2 << std::endl;
+  std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
+  std::cout << "\033[92m" << "El empleado con mayor aumento en el rango de 200000 a mas es: " << nombrem_aumento3 << " con un aumento de: " << m_aumento3 << std::endl;
+  std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
+  std::cout << "\033[92m" << "El valor total de los sueldos antes del aumento es: " << sueldoantes << std::endl;
+  std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
+  std::cout << "\033[92m" << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
+  std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
 }
 // Fin del Programa, gracias por su atención a la explicación del mismo.
     return 0;
