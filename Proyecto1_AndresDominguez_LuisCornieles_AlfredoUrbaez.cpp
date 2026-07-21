@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 // Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez, estudiantes de ingeniería de la Universidad Fermin Toro, Nucleo Lara-Cabudare.
 //Cambio de Nombre.
 int main() {
@@ -23,11 +24,11 @@ prom_aumento3 = 0;
 
 
 
-
+std::cout << std::fixed << std::setprecision(2);
 std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
  do
     {   std::cout << "\033[36m" << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << "\033[0m" << std::endl;
-        std::cout << "\033[90m" << "Ingrese su nombre:";
+        std::cout << "\033[90m" << "Ingrese su nombre:" << "\033[0m";
         std::cin >> nombre;
         if (nombre =="Cancelar" || nombre =="cancelar") {
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
@@ -37,7 +38,7 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
             std::cout << "\033[32m" << "<<<< Porfavor ingresa un nombre valido o 'Cancelar' para finalizar >>>>" << "\033[0m" << std::endl;
             continue;
         }
-        std::cout << "Ingrese su codigo:";
+        std::cout << "\033[90m" << "Ingrese su codigo:" << "\033[0m";
         std::cin >> codigo;
         if (std::cin.fail()) {
             std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar >>>>" << "\033[0m" << std::endl;
@@ -49,7 +50,7 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
-        std::cout <<"Ingrese su sueldo:";
+        std::cout << "\033[90m" << "Ingrese su sueldo:" << "\033[0m";
         std::cin >> sueldo;
         if (std::cin.fail()) {
             std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico o '0' para finalizar>>>>" << "\033[0m" << std::endl;
