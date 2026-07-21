@@ -3,7 +3,7 @@
 // Programa hecho por: Luis Cornieles, Andres Dominguez y Alfredo Urbaez, estudiantes de ingeniería de la Universidad Fermin Toro, Nucleo Lara-Cabudare.
 //Cambio de Nombre.
 int main() {
-    char pregunta; float sueldoantes; float sueldoluego; float aumentom1; float aumentom2; float aumentom3; float sueldodespues;  float promedio1; float promedio2; float promedio3; float prom_aumento1; float prom_aumento2; float prom_aumento3; int empleados; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3; float m_aumento; float m_aumento2; float m_aumento3; std::string nombrem_aumento3; std::string nombrem_aumento2; std::string nombrem_aumento; float empleado1; float empleado2; float empleado3;
+    char pregunta; int ct; int empleadostotales; float sueldoantes; float sueldoluego; float aumentom1; float aumentom2; float aumentom3; float sueldodespues;  float promedio1; float promedio2; float promedio3; float prom_aumento1; float prom_aumento2; float prom_aumento3; int empleados; std::string nombre; int codigo; float sueldo; float aumento1; float aumento2; float aumento3; float m_aumento; float m_aumento2; float m_aumento3; std::string nombrem_aumento3; std::string nombrem_aumento2; std::string nombrem_aumento; float empleado1; float empleado2; float empleado3;
 m_aumento = 0;
 m_aumento2 = 0;
 m_aumento3 = 0;
@@ -22,8 +22,26 @@ prom_aumento3 = 0;
 nombrem_aumento = "(No hay empleados en este rango)";
 nombrem_aumento2 = "(No hay empleados en este rango)";
 nombrem_aumento3 = "(No hay empleados en este rango)";
+ct = 0;
 
-
+while (ct < 1) {
+    std::cout << "\033[90m" << "Escriba la cantidad de empleados deseada para registrarse" << "\033[0m";
+    std::cin >> empleadostotales;
+    if (std::cin.fail()) {
+        std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico >>>>" << "\033[0m" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(100000000, '\n');
+        continue;
+    }
+    if (empleadostotales < 0) {
+        std::cout << "\033[32m" << "<<<< Porfavor ingresa un valor númerico mayor a 0 >>>>" << "\033[0m" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(100000000, '\n');
+        continue;
+    }
+    ct = ct + 1;
+    std::cin.ignore(100000000, '\n');
+  }
 std::cout << std::fixed << std::setprecision(2);
 std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el aumento de sueldo de los empleados   >>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
  do
@@ -31,6 +49,7 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
         std::cout << "\033[36m" << "<<< Escriba 'Cancelar' o 'cancelar' cuando le pida su nombre y/o '0' cuando le pida algún dato numerico para finalizar el programa >>>" << "\033[0m" << std::endl;
         std::cout << "\033[90m" << "Ingrese su nombre:" << "\033[0m";
         std::cin >> nombre;
+        std::cin.ignore(100000000, '\n');
         if (nombre =="Cancelar" || nombre =="cancelar") {
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
@@ -47,6 +66,10 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
             std::cin.ignore(100000000, '\n');
             continue;
         }
+        if (codigo < 0) {
+          std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
+          break;
+        }
         if (codigo == 0) {
           std::cout << "\033[31m" << "<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
@@ -60,6 +83,10 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
             continue;
         }
         if (sueldo ==  0) {
+          std::cout << "\033[31m" <<"<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
+          break;
+        }
+        if (sueldo < 0) {
           std::cout << "\033[31m" <<"<<<< El programa ha sido cancelado por el usuario >>>>" << "\033[0m" << std::endl;
           break;
         }
@@ -110,8 +137,11 @@ std::cout << "\033[1;34m" << "<<<<<<<<<<<<<<<<<<<<   Programa para calcular el a
         std::cin >> pregunta;
         std::cin.ignore(100000000, '\n');
     if (pregunta != 's' && pregunta != 'S') {
-        std::cout << "\033[4;31m" << "<< Coloque un caracter valido acorde a las indicaciones la proxima vez >>" << "\033[0m" << std::endl;
-        break;
+        if (pregunta != 'n' && pregunta != 'N') {
+         std::cout << "\033[4;31m" << "<< Coloque un caracter valido acorde a las indicaciones la proxima vez >>" << "\033[0m" << std::endl;
+         std::cout << "\033[4;32m" << "¿Desea continuar? (s/n): " << "\033[0m";
+         std::cin >> pregunta;
+        }
     }
     } while ((pregunta != 'n' && pregunta != 'N'));
 if (pregunta == 'n' || pregunta == 'N') {
@@ -125,7 +155,7 @@ if (pregunta == 'n' || pregunta == 'N') {
   std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
   std::cout << "\033[92m" << "El valor total de los sueldos despues del aumento es: " << sueldodespues << std::endl;
   std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
-  std::cout << "\033[92m" << "La cantidad total de empleados es: " << empleados << "\033[0m" << std::endl;
+  std::cout << "\033[92m" << "La cantidad total de empleados registrados fue de: " << empleados << " siendo la cantidad esperada: " << empleadostotales << "\033[0m" << std::endl;
   std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
   std::cout << "\033[92m" << "El promedio de aumento en el rango de 0 a 100000 es: " << promedio1 << std::endl;
   std::cout << "\033[94m" << "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << "\033[0m" << std::endl;
